@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head th:replace="fragments/header::header"></head>
+
+<body>
+<div th:replace="fragments/topnav::navbar"></div>
+<div class="container my-2">
+    <h2>Owners</h2>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead class="table-dark">
+        <tr>
+            <th style="width: 150px;">Name</th>
+            <th style="width: 200px;">Address</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th style="width: 100px;">Pets</th>
+            <th>Actions</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="owner : ${selections}">
+            <td
+                    th:href="@{|/owners/${owner.id}|}"
+                    th:text="|${owner.name} ${owner.surname}|">
+            </td>
+            <td th:text="${owner.address}"></td>
+            <td th:text="${owner.email}"></td>
+            <td th:text="${owner.phoneNumber}"></td>
+            <td>
+                <span th:each="pet : ${owner.pets}" th:text="${pet.name}" th:remove="tag"></span>
+            </td>
+
+            <td>
+                <a th:href="@{/showFormForUpdate/{id}(id=${owner.id})}" class="btn btn-primary">Update</a>
+                <a th:href="@{/deleteOwner/{id}(id=${owner.id})}" sec:authorize="hasAuthority('Admin')" class="btn btn-danger">Delete</a>
+                <a th:href="@{/owners/{id}(id=${owner.id})}" class="btn btn-dark">Details</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div th:insert="fragments/footer::footer"></div>
+</body>
+
+</html>

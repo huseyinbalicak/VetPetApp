@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header"></head>
+
+<body>
+<div th:replace="fragments/topnav::navbar"></div>
+<div class="container">
+
+
+
+    <h1 class="display-4">Welcome!</h1>
+    <p class="lead">At Animal Clinic of Balicak, we work hard to provide the highest quality veterinary care to every one of our patients and outstanding customer service to their proud owners.
+
+    </p>
+
+
+
+<img src="../images/vetpet.png" th:src="@{/images/vetpet.png}" />
+
+<div th:insert="fragments/footer::footer"></div>
+</div>
+</body>
+
+</html>

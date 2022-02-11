@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header"></head>
+
+<body>
+<div th:replace="fragments/topnav::navbar"></div>
+
+<div class="container">
+    <h1>Owner Update Page</h1>
+    <hr>
+    <h2>Update Owner</h2>
+
+    <form action="#" th:action="@{/saveOwner}" th:object="${owner}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}"/>
+
+        <input type="text" th:field="*{name}" required="required" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{surname}" required="required" class="form-control mb-4 col-4">
+
+        <input type="email" th:field="*{email}" required="required" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{address}" required="required" class="form-control mb-4 col-4">
+
+        <input type="tel" th:field="*{phoneNumber}" required="required" class="form-control mb-4 col-4">
+
+
+        <button type="submit" class="btn btn-info col-2"> Update Owner</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/owner/owners}"> Back to Owners List</a>
+</div>
+<div th:insert="fragments/footer::footer"></div>
+</body>
+
+</html>

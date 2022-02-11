@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header"></head>
+<body>
+
+<div th:replace="fragments/topnav::navbar"></div>
+
+<div class="container my-2">
+
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead class="thead-dark">
+        <tr>
+
+            <th>Owner Name</th>
+            <th>Pet Name</th>
+            <th>Breed</th>
+            <th>Species</th>
+            <th>Age</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="pet : ${foundPets}">
+
+            <td>
+                <a th:text="${pet.owner.getName()}" th:href="@{/owners/{id}(id=${pet.owner.getId()})}"
+                   class="link-danger"/></a>
+
+            </td>
+            <td th:text="${pet.name}"></td>
+            <td th:text="${pet.species}"></td>
+            <td th:text="${pet.breed}"></td>
+            <td th:text="${pet.age}"></td>
+
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<div th:insert="fragments/footer::footer"></div>
+
+</body>
+
+</html>

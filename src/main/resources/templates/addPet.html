@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header"></head>
+<body>
+
+<div th:replace="fragments/topnav::navbar"></div>
+<div class="container">
+    <h1>Add Pet Page </h1>
+    <hr>
+    <h2>Add Pet</h2>
+    <form action="#" th:action="@{'/pets/new'+${owner.getId()}}" th:object="${pet}" method="POST">
+
+        <span th:text="${owner.getName() + ' ' + owner.getSurname()}">[firstName lastName]</span>
+
+
+        <input type="text" th:field="*{name}" placeholder="Pet Name" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="text" th:field="*{breed}" placeholder="Pet Breed" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="text" th:field="*{species}" placeholder="Pet Species" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="number" th:field="*{age}" placeholder="Pet Age" class="form-control mb-4 col-4"
+               required="required">
+
+        <button type="submit" class="btn btn-info col-2"> Add Pet</button>
+
+    </form>
+
+    <hr>
+
+</div>
+<div th:insert="fragments/footer::footer"></div>
+</body>
+
+</html>

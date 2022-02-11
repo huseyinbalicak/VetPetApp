@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header"></head>
+
+<body>
+<div th:replace="fragments/topnav::navbar"></div>
+<div class="container">
+    <h1>Add Owner Page </h1>
+    <hr>
+    <h2>Add Owner</h2>
+
+    <form th:action="@{/saveOwner}" th:object="${owner}" method="POST">
+        <input type="text" th:field="*{name}" placeholder="Owner Name" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="text" th:field="*{surname}" placeholder="Owner Surname" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="email" th:field="*{email}" placeholder="Owner Email" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="text" th:field="*{address}" placeholder="Owner Address" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="tel" th:field="*{phoneNumber}" placeholder="Owner Phone" required="required"
+               class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Owner</button>
+    </form>
+
+    <hr>
+
+</div>
+
+<div th:insert="fragments/footer::footer"></div>
+
+
+</body>
+
+</html>

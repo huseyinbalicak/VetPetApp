@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header"></head>
+
+<body>
+<div th:replace="fragments/topnav::navbar"></div>
+
+<div class="container">
+    <h1>Update Role Page </h1>
+    <hr>
+    <h2>Update Role</h2>
+    <form  th:action="@{/updateRole}" th:object="${role}" method="post">
+
+
+
+        <input type="hidden" th:field="*{id}"/>
+        <input type="text" th:field="*{description}" placeholder="Description" class="form-control mb-4 col-4"
+               required="required">
+
+        <input type="text" th:field="*{details}" placeholder="Details" class="form-control mb-4 col-4"
+               required="required">
+
+        <button type="submit" class="btn btn-info col-2">Update Role</button>
+
+    </form>
+
+    <hr>
+
+</div>
+<div th:insert="fragments/footer::footer"></div>
+</body>
+
+</html>
