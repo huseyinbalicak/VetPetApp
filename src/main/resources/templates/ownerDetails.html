@@ -67,9 +67,9 @@
                     <td th:text="${pet.breed}"></td>
                     <td th:text="${pet.age}"></td>
                     <td>
-                        <a th:href="@{/updatePet/{pet_id}(pet_id=${pet.getId()})}" class="btn btn-success">Update</a>
+                        <a th:href="@{/updatePet/{pet_id}(pet_id=${pet.getId()})}" class="btn btn-success  btn-sm">Update</a>
                         <a th:href="@{/deletePet/{pet_id}(pet_id=${pet.getId()})}" sec:authorize="hasAuthority('Admin')"
-                           class="btn btn-danger">Delete</a>
+                           class="btn btn-danger  btn-sm">Delete</a>
                     </td>
                 </tr>
                 </tbody>

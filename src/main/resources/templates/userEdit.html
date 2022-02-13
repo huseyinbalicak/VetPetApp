@@ -63,18 +63,16 @@
                             <table class="table table-striped table-advance table-hover">
                                 <tbody>
                                 <tr>
-                                    <th></th>
-                                    <th><i class="icon_profile"></i> Description</th>
-                                    <th><i class="icon_cogs"></i> Action</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
                                 </tr>
                                 <tr th:each="userRole:${userRoles}">
-                                    <td><i class="fa fa-table"></i></td>
                                     <td th:text="${userRole.description}"></td>
                                     <td>
                                         <div class="btn-group">
                                             <a
                                                th:href="@{'/security/role/unis/'+${user.id}+'/' +${userRole.id}}"
-                                               class="btn btn-danger"><i class="icon_close_alt2"></i>Unassigned</a>
+                                               class="btn btn-danger btn-sm">Unassigned</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -101,19 +99,18 @@
                                     <tbody>
                                     <tr>
                                         <th></th>
-                                        <th><i class="icon_profile"></i> Description</th>
-                                        <th><i class="icon_calendar"></i> Details</th>
-                                        <th><i class="icon_cogs"></i> Action</th>
+                                        <th> Description</th>
+                                        <th>Details</th>
+                                        <th>Action</th>
                                     </tr>
                                     <tr th:each="userNotRole:${userNotRoles}">
-                                        <td><i class="fa fa-table"></i></td>
                                         <td th:text="${userNotRole.description}"></td>
                                         <td th:text="${userNotRole.details}"></td>
                                         <td>
                                             <div class="btn-group">
                                                 <a
                                                    th:href="@{'/security/role/assign/'+${user.id}+'/' +${userNotRole.id}}"
-                                                   class="btn btn-success"><i class="icon_plus_alt2"></i>Assign</a>
+                                                   class="btn btn-success btn-sm">Assign</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -127,8 +124,6 @@
 
             </div>
         </div>
-
-
     </section>
 </main>
 <div th:insert="fragments/footer::footer"></div>

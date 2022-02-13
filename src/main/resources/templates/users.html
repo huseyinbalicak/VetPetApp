@@ -30,24 +30,20 @@
 					<td th:text="${user.firstname}">First Name</td>
 					<td th:text="${user.lastname}">Last Name</td>
 					<td th:text="${user.username}">Username</td>
-					<td    th:each="role: ${user.roles}" th:text="${role.getDescription()}"><input type="text" placeholder="Description">Role Name</td>
+					<td    th:each="role: ${user.roles}" th:text="${role.getDescription()}">Role Name</td>
 
 					<td>
 						<a th:href="@{'/security/user/Edit/'+${user.id}}"
-						   class="btn btn-primary"><i class="icon_pencil-edit"></i>Manage Roles
+						   class="btn btn-primary btn-sm">Manage Roles
 					    </a>
-						<a th:href="@{/deleteUser/{id}(id=${user.id})}" sec:authorize="hasAuthority('Admin')" class="btn btn-danger">Delete
+						<a th:href="@{/deleteUser/{id}(id=${user.id})}" sec:authorize="hasAuthority('Admin')" class="btn btn-danger btn-sm">Delete
 						</a>
 
 						<a th:href="@{'/users/edit/'+${user.id}}"
-						   class="btn btn-success"><i class="icon_pencil-edit"></i>Update
+						   class="btn btn-success btn-sm">Update
 						</a>
 
 					</td>
-
-
-
-
 				</tr>
 			</tbody>
 		</table>

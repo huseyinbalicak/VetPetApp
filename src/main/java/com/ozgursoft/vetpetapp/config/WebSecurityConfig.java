@@ -28,9 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
-
         provider.setUserDetailsService(userDetailsService);
-
         provider.setPasswordEncoder(bCryptPasswordEncoder());
 
         return provider;
@@ -40,7 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth)  {
         auth.authenticationProvider(authenticationProvider());
     }
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

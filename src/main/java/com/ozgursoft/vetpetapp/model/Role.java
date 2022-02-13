@@ -21,18 +21,8 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String description;
     private String details;
-
-/*
-    public Role(String description,String details) {
-        this.description = description;
-        this.details = details;
-
-    }
-*/
-
 
 
 }

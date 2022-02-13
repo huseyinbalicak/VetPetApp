@@ -1,6 +1,7 @@
 package com.ozgursoft.vetpetapp.services;
 
-import com.ozgursoft.vetpetapp.Repository.OwnerRepository;
+import com.ozgursoft.vetpetapp.exception.VetPetRuntimeException;
+import com.ozgursoft.vetpetapp.repository.OwnerRepository;
 import com.ozgursoft.vetpetapp.model.Owner;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.domain.Page;
@@ -43,7 +44,7 @@ public class OwnerService {
         if (optional.isPresent()) {
             owner = optional.get();
         } else {
-            throw new RuntimeException(" owner not found for id :: " + id);
+            throw new VetPetRuntimeException(" owner not found for id :: " + id);
         }
         return owner;
     }

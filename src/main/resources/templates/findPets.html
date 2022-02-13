@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header::header"></head>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header::header"><title>Find Pets</title></head>
 
 <body>
 <div th:replace="fragments/topnav::navbar"></div>
@@ -11,8 +11,9 @@
       id="search-owner-form">
     <fieldset>
         <div class="control-group ">
-            <label class="control-label ">Last name </label>
-            <input type="text" th:field="*{name}" size="30" maxlength="80"/>
+            <label>
+                <input type="text" placeholder="Name" th:field="*{name}" size="30" maxlength="80"/>
+            </label>
             <span class="help-inline" th:errors="*{name}">Not Found</span>
         </div>
         <div class="form-actions">

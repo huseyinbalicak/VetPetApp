@@ -16,7 +16,6 @@ public class HomePageController {
         return "updateOwner";
     }
 
-
     @GetMapping("/login")
     public String login() {
         return "login";
@@ -26,7 +25,6 @@ public class HomePageController {
     public String logout() {
         return "login";
     }
-
 
 
 }

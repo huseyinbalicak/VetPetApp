@@ -1,6 +1,7 @@
 package com.ozgursoft.vetpetapp.services;
 
-import com.ozgursoft.vetpetapp.Repository.UserRepository;
+import com.ozgursoft.vetpetapp.exception.VetPetRuntimeException;
+import com.ozgursoft.vetpetapp.repository.UserRepository;
 import com.ozgursoft.vetpetapp.model.UserPrincipal;
 import com.ozgursoft.vetpetapp.model.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,7 +24,7 @@ public class MyUserDetailsService implements UserDetailsService {
         User user = userRepository.findByUsername(username);
 
         if (user == null) {
-            throw new UsernameNotFoundException("User not found!");
+            throw new VetPetRuntimeException(" user not found");
         }
 
         return new UserPrincipal(user);

@@ -31,14 +31,12 @@ public class PetController {
         this.ownerService = ownerService;
     }
 
-
     @GetMapping("pet/pets")
     public String getAllPets(Model model) {
 
         return viewPetPage(model, 1, "name", "asc");
 
     }
-
 
     @GetMapping("/page_pet/{pageNum}")
     public String viewPetPage(Model model,
@@ -63,13 +61,6 @@ public class PetController {
         return "pets";
     }
 
-
-
-
-
-
-
-
     @GetMapping("/pets/new{ownerId}")
     public String petAddForm(@PathVariable(value = "ownerId") long ownerId, Model model, @ModelAttribute("pet") Animal pet) {
 
@@ -82,7 +73,6 @@ public class PetController {
         return "owners";
 
     }
-
 
     @PostMapping("/pets/new{ownerId}")
     public String petAdd(@ModelAttribute("pet") Animal pet, @PathVariable(value = "ownerId") long ownerId, Model model) {
@@ -116,7 +106,6 @@ public class PetController {
             return "redirect:/owners/" + owner.get().getId();
         }
 
-
         return "redirect:/owners/" + owner.get().getId();
     }
 
@@ -135,9 +124,7 @@ public class PetController {
 
         return "pets";
 
-
     }
-
 
     @GetMapping("/findPet")
     public String petFindForm(Model model) {
@@ -145,14 +132,13 @@ public class PetController {
         return "findPets";
     }
 
-
     @GetMapping("/pets")
     public String petFindForm(Animal pet, Model model, BindingResult result) {
 
         Collection<Animal> results = this.animalService.findAnimalByAnimalName(pet.getName());
         if (results.size() > 0) {
-            model.addAttribute("foundPets", results);
-            return "foundPetList";
+            model.addAttribute("petList", results);
+            return "pets";
         } else {
 
             model.addAttribute("pet", new Animal());

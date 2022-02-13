@@ -17,9 +17,7 @@ import java.util.List;
 @Controller
 public class RoleController {
 
-
     private final RoleService roleService;
-
     private final UserService userService;
 
     public RoleController(RoleService roleService, UserService userService) {
@@ -63,7 +61,6 @@ public class RoleController {
         return "redirect:/roles";
     }
 
-
     @GetMapping("/roles/update/{roleId}")
     public String showFormForUpdate(@PathVariable(value = "roleId") Integer roleId, Model model) {
         Role role=roleService.findById(roleId);
@@ -72,14 +69,11 @@ public class RoleController {
         return "updateRole";
     }
 
-
     @PostMapping("updateRole")
     public String updateRole(@ModelAttribute("role") Role role) {
         roleService.save(role);
         return "redirect:/roles";
     }
-
-
 
 
     @GetMapping(value="/roles/delete")
@@ -94,7 +88,6 @@ public class RoleController {
         roleService.assignRole(userId, roleId);
         return "redirect:/security/user/Edit/"+userId;
     }
-
 
     @GetMapping("/security/role/unis/{userId}/{roleId}")
     public String unAssignRole(@PathVariable Integer userId,

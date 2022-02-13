@@ -30,8 +30,6 @@ public class OwnerController {
         return viewPageOwner(model, 1, "name", "asc");
     }
 
-
-
     @GetMapping("/page/{pageNum}")
     public String viewPageOwner(Model model,
                            @PathVariable(name = "pageNum") int pageNum,
@@ -54,7 +52,6 @@ public class OwnerController {
 
         return "owners";
     }
-
 
     @GetMapping("showNewOwnerForm")
     public String showNewOwnerForm(Model model) {
@@ -102,17 +99,15 @@ public class OwnerController {
             result.rejectValue("surname", "notFound", "not found");
             return "findOwners";
         } else {
-            model.addAttribute("selections", results);
-            return "foundOwnerList";
+            model.addAttribute("ownerList", results);
+            return "owners";
         }
     }
-
 
     @GetMapping("/deleteOwner/{id}")
     public String deleteOwner(@PathVariable(value = "id") long id) {
         this.ownerService.delete(id);
         return "redirect:/owner/owners";
     }
-
 
 }

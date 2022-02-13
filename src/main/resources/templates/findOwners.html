@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/header::header"></head>
+<head th:replace="fragments/header::header"><title>Find Owners</title></head>
 
 <body>
 
@@ -12,8 +12,10 @@
       id="search-owner-form">
     <fieldset>
         <div class="control-group ">
-            <label class="control-label ">Last name </label>
-            <input type="text" th:field="*{surname}" size="30" maxlength="80"/>
+
+            <label>
+                <input type="text" placeholder="Lastname" th:field="*{surname}" size="30" maxlength="80"/>
+            </label>
             <span class="help-inline" th:errors="*{surname}">[Errors]</span>
         </div>
         <div class="form-actions">

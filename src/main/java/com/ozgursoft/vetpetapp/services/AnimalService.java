@@ -1,6 +1,7 @@
 package com.ozgursoft.vetpetapp.services;
 
-import com.ozgursoft.vetpetapp.Repository.AnimalRepository;
+import com.ozgursoft.vetpetapp.exception.VetPetRuntimeException;
+import com.ozgursoft.vetpetapp.repository.AnimalRepository;
 import com.ozgursoft.vetpetapp.model.Animal;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -46,7 +47,7 @@ public class AnimalService {
         if (optional.isPresent()) {
             pet = optional.get();
         } else {
-            throw new RuntimeException(" pet not found for id :: " + id);
+            throw new VetPetRuntimeException(" pet not found for id :: " + id);
         }
         return pet;
     }

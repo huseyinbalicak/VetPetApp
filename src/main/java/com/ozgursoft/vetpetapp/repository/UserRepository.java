@@ -1,4 +1,4 @@
-package com.ozgursoft.vetpetapp.Repository;
+package com.ozgursoft.vetpetapp.repository;
 import com.ozgursoft.vetpetapp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.ozgursoft.vetpetapp.Repository;
+package com.ozgursoft.vetpetapp.repository;
 import com.ozgursoft.vetpetapp.model.Owner;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.jpa.repository.JpaRepository;

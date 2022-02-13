@@ -1,7 +1,7 @@
 package com.ozgursoft.vetpetapp.services;
 
-import com.ozgursoft.vetpetapp.Repository.RoleRepository;
-import com.ozgursoft.vetpetapp.Repository.UserRepository;
+import com.ozgursoft.vetpetapp.repository.RoleRepository;
+import com.ozgursoft.vetpetapp.repository.UserRepository;
 import com.ozgursoft.vetpetapp.model.Role;
 import com.ozgursoft.vetpetapp.model.User;
 import org.springframework.stereotype.Service;
