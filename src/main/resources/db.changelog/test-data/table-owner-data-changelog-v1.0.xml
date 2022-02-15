@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="table-owner-data-changelog-v1.0.xml" author="huseyin-balicak" context="test">
+        <insert tableName="owner">
+            <column name="name" value="owner1_name"/>
+            <column name="surname" value="owner1_surname"/>
+            <column name="email" value="owner1@email.com"/>
+            <column name="address" value="Mersin"/>
+            <column name="phone_number" value="794613852"/>
+
+        </insert>
+        <insert tableName="owner">
+            <column name="name" value="owner2_name"/>
+            <column name="surname" value="owner2_surname"/>
+            <column name="email" value="owner2@email.com"/>
+            <column name="address" value="Batman"/>
+            <column name="phone_number" value="456321987"/>
+
+        </insert>
+        <insert tableName="owner">
+            <column name="name" value="owner3_name"/>
+            <column name="surname" value="owner3_surname"/>
+            <column name="email" value="owner3@email.com"/>
+            <column name="address" value="Izmir"/>
+            <column name="phone_number" value="852369741"/>
+
+        </insert>
+        <insert tableName="owner">
+            <column name="name" value="owner4_name"/>
+            <column name="surname" value="owner4_surname"/>
+            <column name="email" value="owner4@email.com"/>
+            <column name="address" value="Ankara"/>
+            <column name="phone_number" value="147852369"/>
+
+        </insert>
+        <insert tableName="owner">
+            <column name="name" value="owner5_name"/>
+            <column name="surname" value="owner5_surname"/>
+            <column name="email" value="owner5@email.com"/>
+            <column name="address" value="İstanbul"/>
+            <column name="phone_number" value="789456123"/>
+        </insert>
+        <insert tableName="owner">
+            <column name="name" value="owner6_name"/>
+            <column name="surname" value="owner6_surname"/>
+            <column name="email" value="owner6@email.com"/>
+            <column name="address" value="Bursa"/>
+            <column name="phone_number" value="159734682"/>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>

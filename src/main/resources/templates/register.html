@@ -7,16 +7,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Balicak Veterinary</title>
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
 
-    <!-- Your custom styles (optional) -->
     <link th:href="@{/css/style.css}" rel="stylesheet">
-    <link th:href="@{/css/petclinic.css}" rel="stylesheet">
 </head>
 <body>
 
@@ -43,8 +38,6 @@
 
 </nav>
 
-
-
 <main>
     <div class="container">
 
@@ -59,7 +52,6 @@
 
                                 <div class="pt-4 pb-2">
                                     <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-                                    <p class="text-center small">Enter your personal details to create account</p>
                                 </div>
 
                                 <form class="row g-3 needs-validation" novalidate th:action="@{/users/addNew}" th:object="${user}"  method="post">
@@ -90,13 +82,6 @@
                                         <div class="invalid-feedback">Please enter your password!</div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <div class="form-check">
-                                            <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                                            <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                                            <div class="invalid-feedback">You must agree before submitting.</div>
-                                        </div>
-                                    </div>
                                     <div class="col-12">
                                         <button class="btn btn-primary w-100" type="submit">Create Account</button>
                                     </div>

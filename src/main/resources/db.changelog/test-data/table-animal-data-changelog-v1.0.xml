@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="table-animal-data-changelog-v1.0.xml" author="huseyin-balicak" context="test">
+        <insert tableName="animal">
+            <column name="name" value="Boncuk"/>
+            <column name="breed" value="Red Shaver"/>
+            <column name="species" value="chicken"/>
+            <column name="age" value="2"/>
+            <column name="owner_id" value="1"/>
+        </insert>
+        <insert tableName="animal">
+            <column name="name" value="Duman"/>
+            <column name="breed" value="American Bobtail"/>
+            <column name="species" value="cat"/>
+            <column name="age" value="3"/>
+            <column name="owner_id" value="2"/>
+        </insert>
+        <insert tableName="animal">
+            <column name="name" value="Mia"/>
+            <column name="breed" value="Aberdeen Angus"/>
+            <column name="species" value="cattle"/>
+            <column name="age" value="4"/>
+            <column name="owner_id" value="3"/>
+        </insert>
+        <insert tableName="animal">
+            <column name="name" value="Gofret"/>
+            <column name="breed" value="Africana"/>
+            <column name="species" value="sheep"/>
+            <column name="age" value="5"/>
+            <column name="owner_id" value="4"/>
+        </insert>
+
+        <insert tableName="animal">
+            <column name="name" value="Maviş"/>
+            <column name="breed" value="Afghan Hound"/>
+            <column name="species" value="dog"/>
+            <column name="age" value="5"/>
+            <column name="owner_id" value="5"/>
+        </insert>
+        <insert tableName="animal">
+            <column name="name" value="Alex"/>
+            <column name="breed" value="American Fuzzy Lop"/>
+            <column name="species" value="Domestic rabbit"/>
+            <column name="age" value="5"/>
+            <column name="owner_id" value="6"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

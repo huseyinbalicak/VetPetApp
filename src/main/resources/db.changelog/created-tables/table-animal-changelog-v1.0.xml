@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="huseyin-balicak" id="table-animal-changelog-v1.0.xml">
+        <createTable tableName="animal">
+            <column name="id" type="LONG" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+            </column>
+            <column name="breed" type="VARCHAR(25)">
+            </column>
+            <column name="species" type="VARCHAR(25)">
+            </column>
+            <column name="age" type="int">
+            </column>
+            <column name="owner_id" type="LONG">
+                <constraints nullable="false" />
+            </column>
+
+
+        </createTable>
+
+<!--        <addForeignKeyConstraint baseTableName="animal" baseColumnNames="animal_owner_id"-->
+<!--                                 constraintName="fk_animal_owner_id"-->
+<!--                                 referencedTableName="owner" referencedColumnNames="id"/>-->
+
+    </changeSet>
+
+</databaseChangeLog>
