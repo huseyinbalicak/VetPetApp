@@ -34,9 +34,9 @@
         <tr th:each="owner : ${ownerList}">
             <td th:text="${owner.name}"></td>
             <td th:text="${owner.surname}"></td>
-            <td th:text="${owner.phoneNumber}"></td>
-            <td th:text="${owner.address}"></td>
             <td th:text="${owner.email}"></td>
+            <td th:text="${owner.address}"></td>
+            <td th:text="${owner.phoneNumber}"></td>
 
             <td>
                 <span th:each="pet : ${owner.pets}" th:text="${pet.name}"></span>
