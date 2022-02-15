@@ -18,8 +18,9 @@
             </column>
             <column name="age" type="int">
             </column>
+
             <column name="owner_id" type="LONG">
-                <constraints nullable="false" />
+                <constraints nullable="false" foreignKeyName="fk_animal_to_owner_id" references="owner(id)"/>
             </column>
 
 
